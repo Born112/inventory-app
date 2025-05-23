@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+</head>
+<body>
+  <h1>Product Dashboard</h1>
+  <button id="logout">Logout</button>
+
+  <h2>Products</h2>
+  <table id="product-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h3>Add Product</h3>
+  <form id="add-product-form">
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="number" id="quantity" placeholder="Quantity" required />
+    <input type="number" id="price" placeholder="Price" required />
+    <input type="text" id="description" placeholder="Description (optional)" />
+    <button type="submit">Add</button>
+  </form>
+
+  <h3>Edit Product</h3>
+  <form id="edit-product-form" style="display: none;">
+    <input type="hidden" id="edit-id" />
+    <input type="text" id="edit-name" placeholder="Name" required />
+    <input type="number" id="edit-quantity" placeholder="Quantity" required />
+    <input type="number" id="edit-price" placeholder="Price" required />
+    <input type="text" id="edit-description" placeholder="Description (optional)" />
+    <button type="submit">Save</button>
+  </form>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
