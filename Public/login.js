@@ -17,6 +17,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
   
       if (data.success) {
         localStorage.setItem("token", data.token);
+        window.location.href = "/dashboard.html";  // редирект
         document.getElementById("message").innerText = "Login successful!";
         // редирект в личный кабинет:
         // window.location.href = "/dashboard.html";

@@ -5,43 +5,28 @@
   <title>Dashboard</title>
 </head>
 <body>
-  <h1>Product Dashboard</h1>
-  <button id="logout">Logout</button>
+  <h1>Добро пожаловать!</h1>
+  <nav>
+    <ul>
+      <li><a href="/incomegoods.html">📦 Приход товаров</a></li>
+      <li><a href="/products.html">📦 Товары</a></li>
+      <li><a href="/users.html">👤 Пользователи</a></li>
+      <li><a href="/logs.html">📜 Лог изменений</a></li>
+      <li><button id="logout">🚪 Выйти</button></li>
+    </ul>
+  </nav>
 
-  <h2>Products</h2>
-  <table id="product-table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <script>
+    // Защита — если нет токена, перекидываем на логин
+    if (!localStorage.getItem("token")) {
+      window.location.href = "/login.html";
+    }
 
-  <h3>Add Product</h3>
-  <form id="add-product-form">
-    <input type="text" id="name" placeholder="Name" required />
-    <input type="number" id="quantity" placeholder="Quantity" required />
-    <input type="number" id="price" placeholder="Price" required />
-    <input type="text" id="description" placeholder="Description (optional)" />
-    <button type="submit">Add</button>
-  </form>
-
-  <h3>Edit Product</h3>
-  <form id="edit-product-form" style="display: none;">
-    <input type="hidden" id="edit-id" />
-    <input type="text" id="edit-name" placeholder="Name" required />
-    <input type="number" id="edit-quantity" placeholder="Quantity" required />
-    <input type="number" id="edit-price" placeholder="Price" required />
-    <input type="text" id="edit-description" placeholder="Description (optional)" />
-    <button type="submit">Save</button>
-  </form>
-
-  <script src="dashboard.js"></script>
+    // Логаут
+    document.getElementById("logout").addEventListener("click", () => {
+      localStorage.removeItem("token");
+      window.location.href = ".html";
+    });
+  </script>
 </body>
 </html>
